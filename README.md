@@ -12,7 +12,7 @@ member can fork it, edit it, and open a PR.
 ## Structure
 
 ```
-index.html          Main page (hero, about, tracker, ecosystem, DAO, community, footer)
+index.html          Main page (hero, about, tracker, ecosystem, community, footer)
 css/style.css        All styling
 js/main.js            Nav toggle + live sales tracker logic
 data/last-sale.json   Manual fallback sale record used when the live API is unreachable
@@ -20,12 +20,16 @@ data/last-sale.json   Manual fallback sale record used when the live API is unre
 
 ## Design
 
-Colors are pulled directly from reference Arbibots pixel-art renders
-supplied for this project: cream/mint faces (`#F5E4DC`, `#E4F3DE`),
-black pixel outlines, purple/pink/peach accent traits (`#B58CE8`,
-`#EC7FA0`, `#F0B183`), and mint/sky-blue/cyan background traits
-(`#DDF2D5`, `#B7C9EC`, `#AEE6E6`) — all set as CSS custom properties at
-the top of `css/style.css`. The header logo, favicon, and tracker-card
+The page uses a light theme: a soft, fixed pastel wash mixing the
+collection's own background trait colors (mint, sky-blue, cyan, pink,
+purple) sits behind white/frosted-glass cards. Colors are pulled
+directly from reference Arbibots pixel-art renders supplied for this
+project: cream/mint faces (`#F5E4DC`, `#E4F3DE`), black pixel outlines,
+purple/pink/peach accent traits (`#B58CE8`, `#EC7FA0`, `#F0B183`), and
+mint/sky-blue/cyan background traits (`#DDF2D5`, `#B7C9EC`, `#AEE6E6`)
+— all set as CSS custom properties at the top of `css/style.css`
+(deeper `-deep` variants exist for text/icons that need contrast on the
+light background). The header logo, favicon, and tracker-card
 thumbnail are small pixel-bot mascots built in the same style as the
 reference art (not a reproduction of any specific token) — swap in real
 collection artwork there if you have licensed assets to use.
