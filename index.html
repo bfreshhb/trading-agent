@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbibots — Community Hub</title>
+<meta name="description" content="Unofficial community-run hub for Arbibots — the first fully on-chain generative NFT collection on Arbitrum, launched 2021.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%225%22 fill=%22%23213147%22/><rect x=%225%22 y=%227%22 width=%2214%22 height=%2210%22 rx=%222%22 fill=%22%2328A0F0%22/><rect x=%228%22 y=%2210%22 width=%223%22 height=%223%22 fill=%22%23213147%22/><rect x=%2213%22 y=%2210%22 width=%223%22 height=%223%22 fill=%22%23213147%22/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="30" height="30">
+          <rect width="24" height="24" rx="6" fill="#213147"/>
+          <rect x="5" y="7" width="14" height="10" rx="2" fill="#28A0F0"/>
+          <rect x="8" y="10" width="3" height="3" fill="#0A0E1A"/>
+          <rect x="13" y="10" width="3" height="3" fill="#0A0E1A"/>
+          <rect x="3" y="10" width="2" height="4" fill="#96BEDC"/>
+          <rect x="19" y="10" width="2" height="4" fill="#96BEDC"/>
+        </svg>
+      </span>
+      <span class="brand-text">ARBIBOTS<span class="brand-sub">.community</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#about">About</a>
+      <a href="#tracker">Sales Tracker</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#dao">BotDAO</a>
+      <a href="#community">Community</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost" href="https://opensea.io/collection/arbibots" target="_blank" rel="noopener">OpenSea</a>
+      <a class="btn btn-primary" href="#community">Join Discord</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Unofficial · Community-Run Fan Hub</p>
+      <h1>2,000 bots.<br><span class="text-gradient">100% on-chain.</span><br>Zero servers.</h1>
+      <p class="hero-lead">
+        Arbibots launched on Arbitrum in September 2021 as one of the first fully on-chain
+        generative NFT collections — every pixel rendered by the smart contract itself, no IPFS,
+        no centralized server. This site is run by fans of the collection to track sales,
+        celebrate the art, and point newcomers to the real BotDAO community.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#tracker">View Live Sales Tracker</a>
+        <a class="btn btn-outline btn-lg" href="https://arbiscan.io/token/0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff" target="_blank" rel="noopener">Verify Contract ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>2,000</strong><span>Total Supply</span></div>
+        <div class="hero-stat"><strong>2021</strong><span>Launched</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>On-Chain</span></div>
+        <div class="hero-stat"><strong>CC0</strong><span>Licensed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tracker">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Live Feed</p>
+        <h2>Last Sale Tracker</h2>
+        <p class="section-lead">Pulls the most recent Arbibots trade straight from on-chain marketplace data. Refreshes automatically.</p>
+      </div>
+
+      <div class="tracker-card" id="tracker-card" data-state="loading">
+        <div class="tracker-glow" aria-hidden="true"></div>
+
+        <div class="tracker-status">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Connecting to marketplace data…</span>
+        </div>
+
+        <div class="tracker-body">
+          <div class="tracker-token">
+            <div class="token-thumb" id="token-thumb">
+              <svg viewBox="0 0 24 24" width="46" height="46">
+                <rect width="24" height="24" rx="5" fill="#213147"/>
+                <rect x="5" y="7" width="14" height="10" rx="2" fill="#28A0F0"/>
+                <rect x="8" y="10" width="3" height="3" fill="#0A0E1A"/>
+                <rect x="13" y="10" width="3" height="3" fill="#0A0E1A"/>
+              </svg>
+            </div>
+            <div>
+              <div class="token-id" id="token-id">—</div>
+              <div class="token-meta" id="token-meta">Waiting for data</div>
+            </div>
+          </div>
+
+          <div class="tracker-metrics">
+            <div class="metric">
+              <span class="metric-label">Sale Price</span>
+              <span class="metric-value" id="sale-price">—</span>
+              <span class="metric-sub" id="sale-price-usd"></span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">When</span>
+              <span class="metric-value" id="sale-time">—</span>
+              <span class="metric-sub" id="sale-time-abs"></span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Marketplace</span>
+              <span class="metric-value" id="sale-market">—</span>
+              <span class="metric-sub" id="sale-parties"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tracker-footer">
+          <a id="tracker-link" class="btn btn-ghost btn-sm" href="https://opensea.io/collection/arbibots/activity" target="_blank" rel="noopener">View on OpenSea ↗</a>
+          <button class="btn btn-outline btn-sm" id="refresh-btn">Refresh</button>
+          <span class="tracker-updated" id="tracker-updated"></span>
+        </div>
+      </div>
+
+      <p class="tracker-disclaimer">
+        Data source: <a href="https://reservoir.tools" target="_blank" rel="noopener">Reservoir</a> aggregated marketplace API for the Arbibots contract on Arbitrum
+        (<code>0xc1fc…9ebff</code>). If the live feed can't be reached (offline demo, rate limit, or no API key configured — see
+        <code>README.md</code>), the card shows that plainly rather than a guessed number.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The Project</p>
+        <h2>A pixel-art experiment that became a DAO</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Sept 2021</span>
+            <h3>Genesis mint on Arbitrum</h3>
+            <p>2,000 generative pixel-robot avatars mint out, rendered entirely by the smart contract — no external image hosting required.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2021–2022</span>
+            <h3>Extensions ship</h3>
+            <p>The community builds BotCases and BotPets, expanding what a Bot can hold and how it's displayed.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">BotDAO forms</span>
+            <h3>1 Bot = 1 vote</h3>
+            <p>Holders take the wheel. Treasury and roadmap decisions move to on-chain governance.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Ongoing</span>
+            <h3>CC0 release</h3>
+            <p>Arbibots art and IP are released CC0 — free for anyone to build on, remix, or commercialize.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ecosystem">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Built By Bots</p>
+        <h2>The BotVerse</h2>
+        <p class="section-lead">Community-built extensions that grew out of the original 2,000.</p>
+      </div>
+      <div class="card-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🗃️</div>
+          <h3>BotCases</h3>
+          <p>On-chain display cases for showing off your Bot alongside collectibles and accessories.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🐾</div>
+          <h3>BotPets</h3>
+          <p>Companion mechanics that pair a pet with your Bot — a community-driven extension layer.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👾</div>
+          <h3>Arbibotchi</h3>
+          <p>A Tamagotchi-inspired on-chain game concept built around keeping your Bot alive and thriving.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🕸️</div>
+          <h3>BotCrawl</h3>
+          <p>An exploration/crawler concept letting Bots venture into community-built on-chain worlds.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <h3>Short Film</h3>
+          <p>A fan/community-produced short film bringing the Bots to life outside the chain.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⛓️</div>
+          <h3>Fully On-Chain</h3>
+          <p>No IPFS, no Arweave, no centralized server — the art lives permanently in the contract.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="dao">
+    <div class="wrap dao-wrap">
+      <div>
+        <p class="eyebrow">Governance</p>
+        <h2>BotDAO</h2>
+        <p class="section-lead">
+          Every Bot is a vote. Holders steer treasury spend, community grants, and what gets built
+          next in the BotVerse. This site has no affiliation with the DAO treasury or team — always
+          verify proposals and contract addresses yourself before signing anything.
+        </p>
+        <ul class="check-list">
+          <li>1 Bot held = 1 governance vote</li>
+          <li>Treasury funded by mint + royalty proceeds</li>
+          <li>Proposals for extensions, grants &amp; partnerships</li>
+        </ul>
+      </div>
+      <div class="dao-card">
+        <h3>Verify before you trust</h3>
+        <p>Always confirm the official contract before interacting:</p>
+        <code class="contract-pill">0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff</code>
+        <a class="btn btn-outline btn-sm" href="https://arbiscan.io/token/0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff" target="_blank" rel="noopener">View on Arbiscan ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="community">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Get Involved</p>
+        <h2>Find the Bots</h2>
+        <p class="section-lead">This is a fan-run hub, not the official project. Use these to find the real, verified community.</p>
+      </div>
+      <div class="link-grid">
+        <a class="link-card" href="https://arbibots.xyz/" target="_blank" rel="noopener">
+          <span class="link-icon">🌐</span>
+          <span>Official Site</span>
+          <span class="link-sub">arbibots.xyz</span>
+        </a>
+        <a class="link-card" href="https://x.com/arbibotsnft" target="_blank" rel="noopener">
+          <span class="link-icon">𝕏</span>
+          <span>X / Twitter</span>
+          <span class="link-sub">@arbibotsNFT</span>
+        </a>
+        <a class="link-card" href="https://opensea.io/collection/arbibots" target="_blank" rel="noopener">
+          <span class="link-icon">⚓</span>
+          <span>OpenSea</span>
+          <span class="link-sub">Collection page</span>
+        </a>
+        <a class="link-card" href="https://market.treasure.lol/collection/arbibots" target="_blank" rel="noopener">
+          <span class="link-icon">💎</span>
+          <span>Treasure Market</span>
+          <span class="link-sub">Arbitrum-native market</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <span class="brand-text small">ARBIBOTS<span class="brand-sub">.community</span></span>
+      <p class="footer-note">
+        Unofficial, community-built fan site for the Arbibots NFT collection (Arbitrum, 2021).
+        Not affiliated with or endorsed by the Arbibots team or BotDAO. Art and project name belong
+        to their respective creators. Always verify contract addresses independently.
+      </p>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#tracker">Tracker</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#community">Community</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "_comment": "Manual fallback used by js/main.js when the live Reservoir API call fails (no key configured, rate limited, or offline). Edit this by hand after a real sale, or wire up a scheduled job to update it automatically. Do not fill in fake numbers — leave fields null if unknown.",
+  "tokenId": null,
+  "priceEth": null,
+  "priceUsd": null,
+  "timestamp": null,
+  "marketplace": null,
+  "from": null,
+  "to": null,
+  "txUrl": null
+}
