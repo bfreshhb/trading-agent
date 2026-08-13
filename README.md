@@ -20,13 +20,15 @@ data/last-sale.json   Manual fallback sale record used when the live API is unre
 
 ## Design
 
-Colors are based on Arbitrum's own documented ecosystem brand blues
-(`#28A0F0`, `#213147`, `#96BEDC`) since the exact Arbibots brand palette
-couldn't be pulled from the live site in the environment this was built
-in (network access to `arbibots.xyz` / OpenSea was blocked). If you have
-the collection's real brand colors or logo assets, swap the CSS custom
-properties at the top of `css/style.css` (`:root { --blue: ...; --navy:
-...; }`) and drop a logo into the header markup in `index.html`.
+Colors are pulled directly from reference Arbibots pixel-art renders
+supplied for this project: cream/mint faces (`#F5E4DC`, `#E4F3DE`),
+black pixel outlines, purple/pink/peach accent traits (`#B58CE8`,
+`#EC7FA0`, `#F0B183`), and mint/sky-blue/cyan background traits
+(`#DDF2D5`, `#B7C9EC`, `#AEE6E6`) — all set as CSS custom properties at
+the top of `css/style.css`. The header logo, favicon, and tracker-card
+thumbnail are small pixel-bot mascots built in the same style as the
+reference art (not a reproduction of any specific token) — swap in real
+collection artwork there if you have licensed assets to use.
 
 ## Live sales tracker
 
